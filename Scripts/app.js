@@ -243,7 +243,7 @@ function ValidateForm()
             {
                 firstName.focus();
                 errorMessage.hidden = false;
-                errorMessage.textContent = "Please enter a Valid First Name with a length of 2 or more characters";
+                errorMessage.textContent = "Please enter a valid first name with a length of 2 or more characters";
             }
             else
             {
@@ -252,19 +252,55 @@ function ValidateForm()
         });
 
         let lastName = document.getElementById("lastName");
-            lastName.addEventListener("blur", (event) => 
+        lastName.addEventListener("blur", (event) => 
             {
                 if(lastName.value.length < 2)
                 {
                     lastName.focus();
                     errorMessage.hidden = false;
-                    errorMessage.textContent = "Please enter a Valid Last Name with a length of 2 or more characters"; 
+                    errorMessage.textContent = "Please enter a valid last name with a length of 2 or more characters"; 
                 }
                 else
                 {
                     errorMessage.hidden = true;
                 }
             });
+
+        let contactNumber = document.getElementById("contactNumber");
+        contactNumber.addEventListener("blur", (event) =>
+        {
+            let contactNumberRGEX = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+            let contactNumberResult = contactNumberRGEX.test(contactNumber.value);
+
+            if(contactNumberResult == false)
+            {
+                contactNumber.focus();
+                errorMessage.hidden = false;
+                errorMessage.textContent = "Please enter a valid contact number (ex. (647) 823-XXXX)"
+            }
+            else
+            {
+                errorMessage.hidden = true;
+            }
+        });
+
+        let email = document.getElementById("email");
+        email.addEventListener("blur", (event) =>
+        {
+            let emailRGEX = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            let emailResult = emailRGEX.test(email.value);
+
+            if(emailResult == false)
+            {
+                email.focus();
+                errorMessage.hidden = false;
+                errorMessage.textContent = "Please enter a valid email"
+            }
+            else
+            {
+                errorMessage.hidden = true;
+            }
+        });
 
         let sendButton = document.getElementById("sendButton");
 
