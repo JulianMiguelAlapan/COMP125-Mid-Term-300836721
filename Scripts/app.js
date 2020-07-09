@@ -1,3 +1,9 @@
+/* 
+Filename: comp125-mid-term-300836721
+Author: Julian Miguel Alapan
+WebsiteName:
+Description: MidTerm Exam for COMP125 - Client-Side Web Development @ Centennial College
+*/
 // setup your IIFE (Immediately Invoked Function Expression)
 (function () {
 "use strict";
