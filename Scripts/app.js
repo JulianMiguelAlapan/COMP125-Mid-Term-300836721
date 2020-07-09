@@ -277,6 +277,7 @@ function ValidateForm()
             console.log("Contact Number: " + contactNumber.value);
             console.log("Email: " + email.value);
             console.log("Your Message: " + yourMessage.value);
+            console.log("Succesfully validated form");
         });
 
     }
@@ -398,7 +399,7 @@ function Start()
     }
 
     let formValidated = ValidateForm();
-    
+
     if(formValidated)
     {
         console.log("Succesfully validated form");
