@@ -4,6 +4,7 @@ Author: Julian Miguel Alapan
 WebsiteName:
 Description: MidTerm Exam for COMP125 - Client-Side Web Development @ Centennial College
 */
+
 // setup your IIFE (Immediately Invoked Function Expression)
 (function () {
 "use strict";
@@ -242,7 +243,7 @@ function ValidateForm()
             {
                 firstName.focus();
                 errorMessage.hidden = false;
-                errerMessage.textContent = "Please enter a valid First Name with a length of 2 or more characters";
+                errorMessage.textContent = "Please enter a Valid First Name with a length of 2 or more characters";
             }
             else
             {
@@ -251,19 +252,19 @@ function ValidateForm()
         });
 
         let lastName = document.getElementById("lastName");
-        lastName.addEventListener("blur", (event) => 
-        {
-            if(lastName.value.length < 2)
+            lastName.addEventListener("blur", (event) => 
             {
-                lastName.focus();
-                errorMessage.hidden = false;
-                errorMessage.textContent = "Please enter a Valid Last Name with a length of 2 or more characters"; 
-            }
-            else
-            {
-                errorMessage.hidden = true;
-            }
-        });
+                if(lastName.value.length < 2)
+                {
+                    lastName.focus();
+                    errorMessage.hidden = false;
+                    errorMessage.textContent = "Please enter a Valid Last Name with a length of 2 or more characters"; 
+                }
+                else
+                {
+                    errorMessage.hidden = true;
+                }
+            });
 
         let sendButton = document.getElementById("sendButton");
 
@@ -271,6 +272,11 @@ function ValidateForm()
         {
             event.preventDefault();
             console.log("Send Button Clicked");
+            console.log("First Name: " + firstName.value);
+            console.log("Last Name: " + lastName.value);
+            console.log("Contact Number: " + contactNumber.value);
+            console.log("Email: " + email.value);
+            console.log("Your Message: ");
         });
 
     }
