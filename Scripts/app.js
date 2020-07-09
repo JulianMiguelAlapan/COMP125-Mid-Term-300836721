@@ -219,6 +219,58 @@ function addParagraphsToGavdosParagraph()
     return false;
 }
 
+function ValidateForm()
+{
+    let contactForm = document.forms[0];
+
+    if(contactForm)
+    {
+        contactForm.noValidate = true;
+
+        let errorMessage = document.getElementById("errorMessage");
+
+        let firstName = document.getElementById("firstName");
+        firstName.addEventListener("blur", (event) =>
+        {
+            if(firstName.value.length < 2)
+            {
+                firstName.focus();
+                errorMessage.hidden = false;
+                errerMessage.textContent = "Please enter a valid First Name with a length of 2 or more characters";
+            }
+            else
+            {
+                errorMessage.hidden = true;
+            }
+        });
+
+        let lastName = document.getElementById("lastName");
+        lastName.addEventListener("blur", (event) => 
+        {
+            if(lastName.value.length < 2)
+            {
+                lastName.focus();
+                errorMessage.hidden = false;
+                errorMessage.textContent = "Please enter a Valid Last Name with a length of 2 or more characters"; 
+            }
+            else
+            {
+                errorMessage.hidden = true;
+            }
+        });
+
+        let sendButton = document.getElementById("sendButton");
+
+        sendButton.addEventListener("click", (event) =>
+        {
+            event.preventDefault();
+            console.log("Send Button Clicked");
+        });
+
+    }
+    return false
+}
+
 function Start()
 {
     console.log('%App Started...');
@@ -331,6 +383,16 @@ function Start()
     else
     {
         console.warn("content not added to GavdosParagraph - does not exist"); 
+    }
+
+    let formValidated = ValidateForm();
+    if(formValidated)
+    {
+        console.log("Succesfully validated form");
+    }
+    else
+    {
+        console.log("Form not validated - does not exist");
     }
 }
 
