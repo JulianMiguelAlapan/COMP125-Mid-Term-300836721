@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "T",
+  "author": "Julian Miguel Alapan",
   "license": "ISC",
   "devDependencies": {
     "@types/bootstrap": "^4.5.0",
@@ -17,5 +17,6 @@
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
-  }
+  },
+  "repository": "https://github.com/JulianMiguelAlapan/COMP125-Mid-Term-300836721.git"
 }
