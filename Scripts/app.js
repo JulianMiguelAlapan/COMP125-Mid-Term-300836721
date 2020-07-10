@@ -12,6 +12,7 @@ Description: MidTerm Exam for COMP125 - Client-Side Web Development @ Centennial
 
 // YOUR CODE GOES HERE
 
+// ADDING THE PARAGRAPHS
 function addParagraphsToIntroParagraph()
 {
     let IntroParagraph = document.getElementById("IntroParagraph");
@@ -226,6 +227,7 @@ function addParagraphsToGavdosParagraph()
     return false;
 }
 
+// FORM VALIDATION
 function ValidateForm()
 {
     let contactForm = document.forms[0];
